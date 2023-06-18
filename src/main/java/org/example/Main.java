@@ -26,25 +26,25 @@ public class Main {public static void main(String[] args) {
     int maxValue = s3.nextInt();
 
     System.out.println("-----".repeat(10));
-    ArrayList<Integer> nums = createArray(length, minValue, maxValue);      // Создаем список с нужными параметрами
+    ArrayList<Integer> nums = createArray(length, minValue, maxValue);
     System.out.println(nums);
-    ArrayList<Integer> numsCopy = new ArrayList<>();         // Создаем копию основного списка для удаления четных чисел без изменения основного списка
+    ArrayList<Integer> numsCopy = new ArrayList<>();
     numsCopy.addAll(nums);
 
     System.out.println("-----".repeat(10));
-    ArrayList<Integer> unevenNums = getArrayWithoutEven(numsCopy);             // Получаем список без четных чисел
+    ArrayList<Integer> unevenNums = getArrayWithoutEven(numsCopy);
     System.out.println("Cписок без четных чисел ниже");
     System.out.println(unevenNums);
     // System.out.println(nums);
 
     System.out.println("-----".repeat(10));
     int minNum = getMinElement(nums);
-    System.out.print("Минимальный элемент = ");                             // Получаем минимальный элемент
+    System.out.print("Минимальный элемент = ");
     System.out.println(minNum);
-    int maxNum = getMaxElement(nums);                                         // Получаем максимальный элемент
+    int maxNum = getMaxElement(nums);
     System.out.print("Максимальный элемент = ");
     System.out.println(maxNum);
-    float avgValue = getAvarageValue(nums);                             // Получаем среднее значение
+    float avgValue = getAvarageValue(nums);
     System.out.print("Среднее значение в списке = ");
     System.out.println(avgValue);
 
@@ -65,7 +65,7 @@ public class Main {public static void main(String[] args) {
         return array;
 
     }
-    public static int getMinElement(ArrayList<Integer> array) {             // Метод взвращает минимальный элемент
+    public static int getMinElement(ArrayList<Integer> array) {
         int min = array.get(0);
         for (Integer integer : array) {
             if (min > integer) min = integer;
@@ -73,20 +73,20 @@ public class Main {public static void main(String[] args) {
         return min;
 
     }
-    public static int getMaxElement(ArrayList<Integer> array) {             // Метод взвращает максимальный элемент
+    public static int getMaxElement(ArrayList<Integer> array) {
         int max = array.get(0);
         for (Integer integer : array) {
             if (max < integer) max = integer;
         }
         return max;
     }
-    public static float getAvarageValue(ArrayList<Integer> array) {        // Метод возвращает среднее значение элементов в списке
+    public static float getAvarageValue(ArrayList<Integer> array) {
         int sum = 0;
         for (Integer integer : array) {
             sum += integer;
         }
         // System.out.println(sum);
-        float avg = sum / array.size();                         // Сумму всех элементов делим на длину списка для нахождения среднего значения
+        float avg = sum / array.size();
         return avg;
     }
 }
